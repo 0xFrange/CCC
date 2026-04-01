@@ -3,8 +3,9 @@ name: Deployment
 on:
   push:
     branches:
-      - master
+    - master
 
+  workflow_dispatch: {}
 env:
   BASE_URL_BACKEND: ${{ secrets.BASE_URL_BACKEND }}
   BASE_URL_API: ${{ secrets.BASE_URL_API }}
@@ -14,30 +15,52 @@ env:
   ANDROID_STORE_PASSWORD: ${{ secrets.ANDROID_STORE_PASSWORD }}
   ANDROID_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
   ANDROID_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
-  RELEASE_ADVERTISEMENT_ID_GOOGLE: ${{ secrets.RELEASE_ADVERTISEMENT_ID_GOOGLE }}
+  RELEASE_ADVERTISEMENT_ID_GOOGLE: ${{ secrets.RELEASE_ADVERTISEMENT_ID_GOOGLE 
+    }}
   DEBUG_ADVERTISEMENT_ID_GOOGLE: ${{ secrets.DEBUG_ADVERTISEMENT_ID_GOOGLE }}
-  RELEASE_ADVERTISEMENT_ID_HUAWEI: ${{ secrets.RELEASE_ADVERTISEMENT_ID_HUAWEI }}
+  RELEASE_ADVERTISEMENT_ID_HUAWEI: ${{ secrets.RELEASE_ADVERTISEMENT_ID_HUAWEI 
+    }}
   DEBUG_ADVERTISEMENT_ID_HUAWEI: ${{ secrets.DEBUG_ADVERTISEMENT_ID_HUAWEI }}
-  GOOGLE_BANNER_AD_UNIT_ID_CALCULATOR_RELEASE: ${{ secrets.GOOGLE_BANNER_AD_UNIT_ID_CALCULATOR_RELEASE }}
-  GOOGLE_BANNER_AD_UNIT_ID_SETTINGS_RELEASE: ${{ secrets.GOOGLE_BANNER_AD_UNIT_ID_SETTINGS_RELEASE }}
-  GOOGLE_BANNER_AD_UNIT_ID_CURRENCIES_RELEASE: ${{ secrets.GOOGLE_BANNER_AD_UNIT_ID_CURRENCIES_RELEASE }}
-  GOOGLE_INTERSTITIAL_AD_ID_RELEASE: ${{ secrets.GOOGLE_INTERSTITIAL_AD_ID_RELEASE }}
-  GOOGLE_REWARDED_AD_UNIT_ID_RELEASE: ${{ secrets.GOOGLE_REWARDED_AD_UNIT_ID_RELEASE }}
-  GOOGLE_BANNER_AD_UNIT_ID_CALCULATOR_DEBUG: ${{ secrets.GOOGLE_BANNER_AD_UNIT_ID_CALCULATOR_DEBUG }}
-  GOOGLE_BANNER_AD_UNIT_ID_SETTINGS_DEBUG: ${{ secrets.GOOGLE_BANNER_AD_UNIT_ID_SETTINGS_DEBUG }}
-  GOOGLE_BANNER_AD_UNIT_ID_CURRENCIES_DEBUG: ${{ secrets.GOOGLE_BANNER_AD_UNIT_ID_CURRENCIES_DEBUG }}
-  GOOGLE_INTERSTITIAL_AD_ID_DEBUG: ${{ secrets.GOOGLE_INTERSTITIAL_AD_ID_DEBUG }}
-  GOOGLE_REWARDED_AD_UNIT_ID_DEBUG: ${{ secrets.GOOGLE_REWARDED_AD_UNIT_ID_DEBUG }}
-  HUAWEI_BANNER_AD_UNIT_ID_CALCULATOR_RELEASE: ${{ secrets.HUAWEI_BANNER_AD_UNIT_ID_CALCULATOR_RELEASE }}
-  HUAWEI_BANNER_AD_UNIT_ID_SETTINGS_RELEASE: ${{ secrets.HUAWEI_BANNER_AD_UNIT_ID_SETTINGS_RELEASE }}
-  HUAWEI_BANNER_AD_UNIT_ID_CURRENCIES_RELEASE: ${{ secrets.HUAWEI_BANNER_AD_UNIT_ID_CURRENCIES_RELEASE }}
-  HUAWEI_INTERSTITIAL_AD_ID_RELEASE: ${{ secrets.HUAWEI_INTERSTITIAL_AD_ID_RELEASE }}
-  HUAWEI_REWARDED_AD_UNIT_ID_RELEASE: ${{ secrets.HUAWEI_REWARDED_AD_UNIT_ID_RELEASE }}
-  HUAWEI_BANNER_AD_UNIT_ID_CALCULATOR_DEBUG: ${{ secrets.HUAWEI_BANNER_AD_UNIT_ID_CALCULATOR_DEBUG }}
-  HUAWEI_BANNER_AD_UNIT_ID_SETTINGS_DEBUG: ${{ secrets.HUAWEI_BANNER_AD_UNIT_ID_SETTINGS_DEBUG }}
-  HUAWEI_BANNER_AD_UNIT_ID_CURRENCIES_DEBUG: ${{ secrets.HUAWEI_BANNER_AD_UNIT_ID_CURRENCIES_DEBUG }}
-  HUAWEI_INTERSTITIAL_AD_ID_DEBUG: ${{ secrets.HUAWEI_INTERSTITIAL_AD_ID_DEBUG }}
-  HUAWEI_REWARDED_AD_UNIT_ID_DEBUG: ${{ secrets.HUAWEI_REWARDED_AD_UNIT_ID_DEBUG }}
+  GOOGLE_BANNER_AD_UNIT_ID_CALCULATOR_RELEASE: ${{ 
+    secrets.GOOGLE_BANNER_AD_UNIT_ID_CALCULATOR_RELEASE }}
+  GOOGLE_BANNER_AD_UNIT_ID_SETTINGS_RELEASE: ${{ 
+    secrets.GOOGLE_BANNER_AD_UNIT_ID_SETTINGS_RELEASE }}
+  GOOGLE_BANNER_AD_UNIT_ID_CURRENCIES_RELEASE: ${{ 
+    secrets.GOOGLE_BANNER_AD_UNIT_ID_CURRENCIES_RELEASE }}
+  GOOGLE_INTERSTITIAL_AD_ID_RELEASE: ${{ 
+    secrets.GOOGLE_INTERSTITIAL_AD_ID_RELEASE }}
+  GOOGLE_REWARDED_AD_UNIT_ID_RELEASE: ${{ 
+    secrets.GOOGLE_REWARDED_AD_UNIT_ID_RELEASE }}
+  GOOGLE_BANNER_AD_UNIT_ID_CALCULATOR_DEBUG: ${{ 
+    secrets.GOOGLE_BANNER_AD_UNIT_ID_CALCULATOR_DEBUG }}
+  GOOGLE_BANNER_AD_UNIT_ID_SETTINGS_DEBUG: ${{ 
+    secrets.GOOGLE_BANNER_AD_UNIT_ID_SETTINGS_DEBUG }}
+  GOOGLE_BANNER_AD_UNIT_ID_CURRENCIES_DEBUG: ${{ 
+    secrets.GOOGLE_BANNER_AD_UNIT_ID_CURRENCIES_DEBUG }}
+  GOOGLE_INTERSTITIAL_AD_ID_DEBUG: ${{ secrets.GOOGLE_INTERSTITIAL_AD_ID_DEBUG 
+    }}
+  GOOGLE_REWARDED_AD_UNIT_ID_DEBUG: ${{ secrets.GOOGLE_REWARDED_AD_UNIT_ID_DEBUG
+    }}
+  HUAWEI_BANNER_AD_UNIT_ID_CALCULATOR_RELEASE: ${{ 
+    secrets.HUAWEI_BANNER_AD_UNIT_ID_CALCULATOR_RELEASE }}
+  HUAWEI_BANNER_AD_UNIT_ID_SETTINGS_RELEASE: ${{ 
+    secrets.HUAWEI_BANNER_AD_UNIT_ID_SETTINGS_RELEASE }}
+  HUAWEI_BANNER_AD_UNIT_ID_CURRENCIES_RELEASE: ${{ 
+    secrets.HUAWEI_BANNER_AD_UNIT_ID_CURRENCIES_RELEASE }}
+  HUAWEI_INTERSTITIAL_AD_ID_RELEASE: ${{ 
+    secrets.HUAWEI_INTERSTITIAL_AD_ID_RELEASE }}
+  HUAWEI_REWARDED_AD_UNIT_ID_RELEASE: ${{ 
+    secrets.HUAWEI_REWARDED_AD_UNIT_ID_RELEASE }}
+  HUAWEI_BANNER_AD_UNIT_ID_CALCULATOR_DEBUG: ${{ 
+    secrets.HUAWEI_BANNER_AD_UNIT_ID_CALCULATOR_DEBUG }}
+  HUAWEI_BANNER_AD_UNIT_ID_SETTINGS_DEBUG: ${{ 
+    secrets.HUAWEI_BANNER_AD_UNIT_ID_SETTINGS_DEBUG }}
+  HUAWEI_BANNER_AD_UNIT_ID_CURRENCIES_DEBUG: ${{ 
+    secrets.HUAWEI_BANNER_AD_UNIT_ID_CURRENCIES_DEBUG }}
+  HUAWEI_INTERSTITIAL_AD_ID_DEBUG: ${{ secrets.HUAWEI_INTERSTITIAL_AD_ID_DEBUG 
+    }}
+  HUAWEI_REWARDED_AD_UNIT_ID_DEBUG: ${{ secrets.HUAWEI_REWARDED_AD_UNIT_ID_DEBUG
+    }}
   APP_STORE_CONNECT_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
   APP_STORE_CONNECT_KEY_CONTENT: ${{ secrets.APP_STORE_CONNECT_KEY_CONTENT }}
   APP_STORE_CONNECT_KEY_ID: ${{ secrets.APP_STORE_CONNECT_KEY_ID }}
@@ -60,210 +83,230 @@ jobs:
       status: ${{ steps.status.outputs.status }}
     steps:
 
-      - name: Setup Gradle Repo
-        uses: Oztechan/Global/actions/setup-gradle-repo@4bda8a424485eab2b69d39883a78bcbe599874bb
+    - name: Setup Gradle Repo
+      uses: 
+        Oztechan/Global/actions/setup-gradle-repo@4bda8a424485eab2b69d39883a78bcbe599874bb
 
-      - name: Adding secret files
-        uses: ./.github/actions/add-secret-files
-        with:
-          ANDROID_RELEASE_KEYSTORE_ASC: ${{ secrets.ANDROID_RELEASE_KEYSTORE_ASC }}
-          SECRET_PASSWORD: ${{ secrets.SECRET_PASSWORD }}
-          GOOGLE_SERVICES_JSON_ASC: ${{ secrets.GOOGLE_SERVICES_JSON_ASC }}
-          AG_CONNECT_SERVICES_JSON_ASC: ${{ secrets.AG_CONNECT_SERVICES_JSON_ASC }}
-          GOOGLE_SERVICE_INFO_PLIST_ASC_RELEASE: ${{ secrets.GOOGLE_SERVICE_INFO_PLIST_ASC_RELEASE }}
-          GOOGLE_SERVICE_INFO_PLIST_ASC_DEBUG: ${{ secrets.GOOGLE_SERVICE_INFO_PLIST_ASC_DEBUG }}
-          IOS_XCCONFIG_ASC_RELEASE: ${{ secrets.IOS_XCCONFIG_ASC_RELEASE }}
-          IOS_XCCONFIG_ASC_DEBUG: ${{ secrets.IOS_XCCONFIG_ASC_DEBUG }}
-          GOOGLE_PLAY_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_PLAY_SERVICE_ACCOUNT_JSON }}
+    - name: Adding secret files
+      uses: ./.github/actions/add-secret-files
+      with:
+        ANDROID_RELEASE_KEYSTORE_ASC: ${{ secrets.ANDROID_RELEASE_KEYSTORE_ASC 
+          }}
+        SECRET_PASSWORD: ${{ secrets.SECRET_PASSWORD }}
+        GOOGLE_SERVICES_JSON_ASC: ${{ secrets.GOOGLE_SERVICES_JSON_ASC }}
+        AG_CONNECT_SERVICES_JSON_ASC: ${{ secrets.AG_CONNECT_SERVICES_JSON_ASC 
+          }}
+        GOOGLE_SERVICE_INFO_PLIST_ASC_RELEASE: ${{ 
+          secrets.GOOGLE_SERVICE_INFO_PLIST_ASC_RELEASE }}
+        GOOGLE_SERVICE_INFO_PLIST_ASC_DEBUG: ${{ 
+          secrets.GOOGLE_SERVICE_INFO_PLIST_ASC_DEBUG }}
+        IOS_XCCONFIG_ASC_RELEASE: ${{ secrets.IOS_XCCONFIG_ASC_RELEASE }}
+        IOS_XCCONFIG_ASC_DEBUG: ${{ secrets.IOS_XCCONFIG_ASC_DEBUG }}
+        GOOGLE_PLAY_SERVICE_ACCOUNT_JSON: ${{ 
+          secrets.GOOGLE_PLAY_SERVICE_ACCOUNT_JSON }}
 
-      - name: Generate Artifacts
-        run: ./gradlew :android:app:bundleRelease :backend:app:jar --parallel
+    - name: Generate Artifacts
+      run: ./gradlew :android:app:bundleRelease :backend:app:jar --parallel
 
-      - name: Upload Google App Bundle
-        uses: actions/upload-artifact@v6.0.0
-        with:
-          name: googleBundle
-          path: android/app/build/outputs/bundle/googleRelease/app-google-release.aab
+    - name: Upload Google App Bundle
+      uses: actions/upload-artifact@v6.0.0
+      with:
+        name: googleBundle
+        path: 
+          android/app/build/outputs/bundle/googleRelease/app-google-release.aab
 
-      - name: Upload Huawei App Bundle
-        uses: actions/upload-artifact@v6.0.0
-        with:
-          name: huaweiBundle
-          path: android/app/build/outputs/bundle/huaweiRelease/app-huawei-release.aab
+    - name: Upload Huawei App Bundle
+      uses: actions/upload-artifact@v6.0.0
+      with:
+        name: huaweiBundle
+        path: 
+          android/app/build/outputs/bundle/huaweiRelease/app-huawei-release.aab
 
-      - name: Upload Backend Jar
-        uses: actions/upload-artifact@v6.0.0
-        with:
-          name: backendJar
-          path: backend/app/build/libs/app-*.jar
+    - name: Upload Backend Jar
+      uses: actions/upload-artifact@v6.0.0
+      with:
+        name: backendJar
+        path: backend/app/build/libs/app-*.jar
 
-      - name: Set Job Status
-        id: status
-        run: echo "status=success" >> $GITHUB_OUTPUT
+    - name: Set Job Status
+      id: status
+      run: echo "status=success" >> $GITHUB_OUTPUT
 
   UploadToGooglePlay:
     runs-on: ubuntu-24.04
-    needs: [ GenerateGradleArtifacts ]
+    needs: [GenerateGradleArtifacts]
     outputs:
       status: ${{ steps.status.outputs.status }}
     steps:
 
-      - name: Clone Repo
-        uses: actions/checkout@v6.0.2
+    - name: Clone Repo
+      uses: actions/checkout@v6.0.2
 
-      - name: Download App Bundle
-        uses: actions/download-artifact@v7.0.0
-        with:
-          name: googleBundle
+    - name: Download App Bundle
+      uses: actions/download-artifact@v7.0.0
+      with:
+        name: googleBundle
 
-      - name: Adding secret files
-        uses: ./.github/actions/add-secret-files
-        with:
-          ANDROID_RELEASE_KEYSTORE_ASC: ${{ secrets.ANDROID_RELEASE_KEYSTORE_ASC }}
-          SECRET_PASSWORD: ${{ secrets.SECRET_PASSWORD }}
-          GOOGLE_SERVICES_JSON_ASC: ${{ secrets.GOOGLE_SERVICES_JSON_ASC }}
-          AG_CONNECT_SERVICES_JSON_ASC: ${{ secrets.AG_CONNECT_SERVICES_JSON_ASC }}
-          GOOGLE_SERVICE_INFO_PLIST_ASC_RELEASE: ${{ secrets.GOOGLE_SERVICE_INFO_PLIST_ASC_RELEASE }}
-          GOOGLE_SERVICE_INFO_PLIST_ASC_DEBUG: ${{ secrets.GOOGLE_SERVICE_INFO_PLIST_ASC_DEBUG }}
-          IOS_XCCONFIG_ASC_RELEASE: ${{ secrets.IOS_XCCONFIG_ASC_RELEASE }}
-          IOS_XCCONFIG_ASC_DEBUG: ${{ secrets.IOS_XCCONFIG_ASC_DEBUG }}
-          GOOGLE_PLAY_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_PLAY_SERVICE_ACCOUNT_JSON }}
+    - name: Adding secret files
+      uses: ./.github/actions/add-secret-files
+      with:
+        ANDROID_RELEASE_KEYSTORE_ASC: ${{ secrets.ANDROID_RELEASE_KEYSTORE_ASC 
+          }}
+        SECRET_PASSWORD: ${{ secrets.SECRET_PASSWORD }}
+        GOOGLE_SERVICES_JSON_ASC: ${{ secrets.GOOGLE_SERVICES_JSON_ASC }}
+        AG_CONNECT_SERVICES_JSON_ASC: ${{ secrets.AG_CONNECT_SERVICES_JSON_ASC 
+          }}
+        GOOGLE_SERVICE_INFO_PLIST_ASC_RELEASE: ${{ 
+          secrets.GOOGLE_SERVICE_INFO_PLIST_ASC_RELEASE }}
+        GOOGLE_SERVICE_INFO_PLIST_ASC_DEBUG: ${{ 
+          secrets.GOOGLE_SERVICE_INFO_PLIST_ASC_DEBUG }}
+        IOS_XCCONFIG_ASC_RELEASE: ${{ secrets.IOS_XCCONFIG_ASC_RELEASE }}
+        IOS_XCCONFIG_ASC_DEBUG: ${{ secrets.IOS_XCCONFIG_ASC_DEBUG }}
+        GOOGLE_PLAY_SERVICE_ACCOUNT_JSON: ${{ 
+          secrets.GOOGLE_PLAY_SERVICE_ACCOUNT_JSON }}
 
-      - name: Upload Artifact to Google Play Console
-        uses: r0adkll/upload-google-play@v1.1.3
-        with:
-          serviceAccountJson: service_account.json
-          packageName: mustafaozhan.github.com.mycurrencies
-          releaseFiles: app-google-release.aab
-          track: internal
-          status: completed
+    - name: Upload Artifact to Google Play Console
+      uses: r0adkll/upload-google-play@v1.1.3
+      with:
+        serviceAccountJson: service_account.json
+        packageName: mustafaozhan.github.com.mycurrencies
+        releaseFiles: app-google-release.aab
+        track: internal
+        status: completed
 
-      - name: Delete App Bundle
-        uses: geekyeggo/delete-artifact@v5.1.0
-        with:
-          name: googleBundle
+    - name: Delete App Bundle
+      uses: geekyeggo/delete-artifact@v5.1.0
+      with:
+        name: googleBundle
 
-      - name: Set Job Status
-        id: status
-        run: echo "status=success" >> $GITHUB_OUTPUT
+    - name: Set Job Status
+      id: status
+      run: echo "status=success" >> $GITHUB_OUTPUT
 
   UploadToHuaweiAppGallery:
     runs-on: ubuntu-24.04
-    needs: [ GenerateGradleArtifacts ]
+    needs: [GenerateGradleArtifacts]
     outputs:
       status: ${{ steps.status.outputs.status }}
     steps:
 
-      - name: Download App Bundle
-        uses: actions/download-artifact@v7.0.0
-        with:
-          name: huaweiBundle
+    - name: Download App Bundle
+      uses: actions/download-artifact@v7.0.0
+      with:
+        name: huaweiBundle
 
-      - name: Deploy to Huawei App Gallery
-        uses: muhamedzeema/appgallery-deply-action@main
-        with:
-          client-id: ${{secrets.HUAWEI_CLIENT_ID}}
-          client-key: ${{secrets.HUAWEI_CLIENT_KEY}}
-          app-id: ${{secrets.HUAWEI_APP_ID}}
-          file-extension: "aab"
-          file-path: "app-huawei-release.aab"
-          file-name: "app-huawei-release"
+    - name: Deploy to Huawei App Gallery
+      uses: muhamedzeema/appgallery-deply-action@main
+      with:
+        client-id: ${{secrets.HUAWEI_CLIENT_ID}}
+        client-key: ${{secrets.HUAWEI_CLIENT_KEY}}
+        app-id: ${{secrets.HUAWEI_APP_ID}}
+        file-extension: "aab"
+        file-path: "app-huawei-release.aab"
+        file-name: "app-huawei-release"
 
-      - name: Delete App Bundle
-        uses: geekyeggo/delete-artifact@v5.1.0
-        with:
-          name: huaweiBundle
+    - name: Delete App Bundle
+      uses: geekyeggo/delete-artifact@v5.1.0
+      with:
+        name: huaweiBundle
 
-      - name: Set Job Status
-        id: status
-        run: echo "status=success" >> $GITHUB_OUTPUT
+    - name: Set Job Status
+      id: status
+      run: echo "status=success" >> $GITHUB_OUTPUT
 
   DeployToServer:
     runs-on: ubuntu-24.04
-    needs: [ GenerateGradleArtifacts ]
+    needs: [GenerateGradleArtifacts]
     outputs:
       status: ${{ steps.status.outputs.status }}
     steps:
 
-      - name: Download Backend Jar
-        uses: actions/download-artifact@v7.0.0
-        with:
-          name: backendJar
-          path: artifact
+    - name: Download Backend Jar
+      uses: actions/download-artifact@v7.0.0
+      with:
+        name: backendJar
+        path: artifact
 
-      - name: Deploy to Server
-        uses: easingthemes/ssh-deploy@v5.1.1
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
-          REMOTE_USER: ${{ secrets.REMOTE_USER }}
-          TARGET: ${{ secrets.REMOTE_TARGET }}
-          SOURCE: "artifact/"
+    - name: Deploy to Server
+      uses: easingthemes/ssh-deploy@v5.1.1
+      env:
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+        REMOTE_USER: ${{ secrets.REMOTE_USER }}
+        TARGET: ${{ secrets.REMOTE_TARGET }}
+        SOURCE: "artifact/"
 
-      - name: Delete Backend Jar
-        uses: geekyeggo/delete-artifact@v5.1.0
-        with:
-          name: backendJar
+    - name: Delete Backend Jar
+      uses: geekyeggo/delete-artifact@v5.1.0
+      with:
+        name: backendJar
 
-      - name: Set Job Status
-        id: status
-        run: echo "status=success" >> $GITHUB_OUTPUT
+    - name: Set Job Status
+      id: status
+      run: echo "status=success" >> $GITHUB_OUTPUT
 
   UploadToAppStore:
     runs-on: macos-15
     outputs:
       status: ${{ steps.status.outputs.status }}
     steps:
-      - name: Setup Gradle Repo
-        uses: Oztechan/Global/actions/setup-gradle-repo@4bda8a424485eab2b69d39883a78bcbe599874bb
+    - name: Setup Gradle Repo
+      uses: 
+        Oztechan/Global/actions/setup-gradle-repo@4bda8a424485eab2b69d39883a78bcbe599874bb
 
-      - name: Adding secret files
-        uses: ./.github/actions/add-secret-files
-        with:
-          ANDROID_RELEASE_KEYSTORE_ASC: ${{ secrets.ANDROID_RELEASE_KEYSTORE_ASC }}
-          SECRET_PASSWORD: ${{ secrets.SECRET_PASSWORD }}
-          GOOGLE_SERVICES_JSON_ASC: ${{ secrets.GOOGLE_SERVICES_JSON_ASC }}
-          AG_CONNECT_SERVICES_JSON_ASC: ${{ secrets.AG_CONNECT_SERVICES_JSON_ASC }}
-          GOOGLE_SERVICE_INFO_PLIST_ASC_RELEASE: ${{ secrets.GOOGLE_SERVICE_INFO_PLIST_ASC_RELEASE }}
-          GOOGLE_SERVICE_INFO_PLIST_ASC_DEBUG: ${{ secrets.GOOGLE_SERVICE_INFO_PLIST_ASC_DEBUG }}
-          IOS_XCCONFIG_ASC_RELEASE: ${{ secrets.IOS_XCCONFIG_ASC_RELEASE }}
-          IOS_XCCONFIG_ASC_DEBUG: ${{ secrets.IOS_XCCONFIG_ASC_DEBUG }}
-          GOOGLE_PLAY_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_PLAY_SERVICE_ACCOUNT_JSON }}
+    - name: Adding secret files
+      uses: ./.github/actions/add-secret-files
+      with:
+        ANDROID_RELEASE_KEYSTORE_ASC: ${{ secrets.ANDROID_RELEASE_KEYSTORE_ASC 
+          }}
+        SECRET_PASSWORD: ${{ secrets.SECRET_PASSWORD }}
+        GOOGLE_SERVICES_JSON_ASC: ${{ secrets.GOOGLE_SERVICES_JSON_ASC }}
+        AG_CONNECT_SERVICES_JSON_ASC: ${{ secrets.AG_CONNECT_SERVICES_JSON_ASC 
+          }}
+        GOOGLE_SERVICE_INFO_PLIST_ASC_RELEASE: ${{ 
+          secrets.GOOGLE_SERVICE_INFO_PLIST_ASC_RELEASE }}
+        GOOGLE_SERVICE_INFO_PLIST_ASC_DEBUG: ${{ 
+          secrets.GOOGLE_SERVICE_INFO_PLIST_ASC_DEBUG }}
+        IOS_XCCONFIG_ASC_RELEASE: ${{ secrets.IOS_XCCONFIG_ASC_RELEASE }}
+        IOS_XCCONFIG_ASC_DEBUG: ${{ secrets.IOS_XCCONFIG_ASC_DEBUG }}
+        GOOGLE_PLAY_SERVICE_ACCOUNT_JSON: ${{ 
+          secrets.GOOGLE_PLAY_SERVICE_ACCOUNT_JSON }}
 
-      - name: StoreBuild
-        working-directory: ios
-        run: fastlane store_build
+    - name: StoreBuild
+      working-directory: ios
+      run: fastlane store_build
 
-      - name: Set Job Status
-        id: status
-        run: echo "status=success" >> $GITHUB_OUTPUT
+    - name: Set Job Status
+      id: status
+      run: echo "status=success" >> $GITHUB_OUTPUT
 
   Notify:
     runs-on: ubuntu-24.04
-    needs: [ GenerateGradleArtifacts, UploadToGooglePlay, UploadToHuaweiAppGallery, DeployToServer, UploadToAppStore ]
+    needs: [GenerateGradleArtifacts, UploadToGooglePlay, 
+        UploadToHuaweiAppGallery, DeployToServer, UploadToAppStore]
     if: always()
     steps:
 
-      - name: Notify slack success
-        if: needs.GenerateGradleArtifacts.outputs.status == 'success' &&
-          needs.UploadToGooglePlay.outputs.status == 'success' &&
-          needs.UploadToHuaweiAppGallery.outputs.status == 'success' &&
-          needs.DeployToServer.outputs.status == 'success' &&
-          needs.UploadToAppStore.outputs.status == 'success'
-        uses: voxmedia/github-action-slack-notify-build@v1.6.0
-        with:
-          channel: ccc-github
-          status: SUCCESS
-          color: good
+    - name: Notify slack success
+      if: needs.GenerateGradleArtifacts.outputs.status == 'success' && 
+        needs.UploadToGooglePlay.outputs.status == 'success' && 
+        needs.UploadToHuaweiAppGallery.outputs.status == 'success' && 
+        needs.DeployToServer.outputs.status == 'success' && 
+        needs.UploadToAppStore.outputs.status == 'success'
+      uses: voxmedia/github-action-slack-notify-build@v1.6.0
+      with:
+        channel: ccc-github
+        status: SUCCESS
+        color: good
 
-      - name: Notify slack fail
-        if: false == (needs.GenerateGradleArtifacts.outputs.status == 'success') ||
-          false == (needs.UploadToGooglePlay.outputs.status == 'success') ||
-          false == (needs.UploadToHuaweiAppGallery.outputs.status == 'success') ||
-          false == (needs.DeployToServer.outputs.status == 'success') ||
-          false == (needs.UploadToAppStore.outputs.status == 'success')
-        uses: voxmedia/github-action-slack-notify-build@v1.6.0
-        with:
-          channel: ccc-github
-          status: FAILED
-          color: danger
+    - name: Notify slack fail
+      if: false == (needs.GenerateGradleArtifacts.outputs.status == 'success') 
+        || false == (needs.UploadToGooglePlay.outputs.status == 'success') || 
+        false == (needs.UploadToHuaweiAppGallery.outputs.status == 'success') ||
+        false == (needs.DeployToServer.outputs.status == 'success') || false == 
+        (needs.UploadToAppStore.outputs.status == 'success')
+      uses: voxmedia/github-action-slack-notify-build@v1.6.0
+      with:
+        channel: ccc-github
+        status: FAILED
+        color: danger
